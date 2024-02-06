@@ -15,6 +15,55 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="author" href="https://medium.com/@elVictor01">
     <link rel="author" href="https://www.linkedin.com/in/elvictor/">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .publication-title, .conference-info, .column-title, .column-info {
+            margin: 5px 0;
+        }
+        .authors, .commentators {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .column-link, .publication-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .column-link:hover, .publication-link:hover {
+            text-decoration: underline;
+        }
+        .column-publication, .research-publication {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -68,39 +117,36 @@
                     <img src="assets/img/headShot.jpeg" alt="Victor_Ojewale" width="180px" class="roundImg">
                 </div>
             </div>
-            <p>Hi, welcome to my website! :)</p>
-            <p style="text-align: justify;">I am a CS PhD student at Brown Univerity. I am also affiliated with the Center for Tech Responsibility, Reimagination and Redesign(CNTR) and the  Data Science Institute(DSI)  where I am advised by <a href="https://vivo.brown.edu/display/suresh" target="_blank"><span style="color: rgb(10, 93, 128)">Prof.Suresh Venkatasubramanian</span></a> . 
-                My research interests lie in understanding the impacts of algorithmic systems, particularly through the lenses of algorithmic (un)fairness and algorithm audits. I am also a member of the RISE Lab at Brown University where i also work with <a href="https://www.brown.edu/academics/cognitive-linguistic-psychological-sciences/people/faculty/malik-boykin" target="_blank"><span style="color: rgb(10, 93, 128)">Prof.Malik Boykin</span></a> in understanding people's perceptions of fairness.  Previously, I studied Computer Science at the University of Ibadan.
-                
-            </p>
-            <p style="text-align: justify;"> Before starting my Phd I was a Data Scientist at SeqHub Analytics llc and also a research assistant with .<a href="https://foundation.mozilla.org/en/what-we-fund/oat/" target="_blank"><span style="color: rgb(10, 93, 128)">The Mozilla OAT Project</span></a> </p>
-             <p style="text-align: justify;">With a passion for exploring the ethical implications of emerging technologies, I am hoping to contribute to the development of more responsible and accountable technology systems.</p>
-
     </article>
     <div class="container">
-        <h1 class="header-name">News</h1>
-        <ul class="list">
-            <li>Our Paper <a href="https://arxiv.org/abs/2401.14462" target="_blank"><span style="color: rgb(10, 93, 128)"></span>"SoK: AI Auditing: The Broken Bus on the Road to AI Accountability"</span></a> has been accepted to to the 2nd IEEE Conference on Secure and Trustworthy Machine Learning! Camera-ready and more details on the way(Dec 2023)</li>
-            <li>I gave a talk at the inaugural research mentorship series of the Society of Petroleum Engineers, University of Ibadan Chapter. See Slides <a href="https://docs.google.com/presentation/d/1Ez4NByx2e8YOjDL2dchzyjEhGebqfrD7saYWnxAke0M/edit?usp=sharing" target="_blank"><span style="color: rgb(10, 93, 128)"></span>here</span></a>(Oct 2023)</li>
-            <li>I co-facilitated a panel session on <a href="https://schedule.mozillafestival.org/session/WR9R7Z-1" target="_blank"><span style="color: rgb(10, 93, 128)"></span>Navigating the Open-Source Algorithm Audit tooling landscape</span></a> with <a href="https://abebabirhane.com/" target="_blank"><span style="color: rgb(10, 93, 128)"></span>Abeba Birhane</span></a>  at Mozfest, 2023(Mar 2023)</li>
-            <li>I officially accepted Brown's PhD offer to start in the fall(Mar 2023)</li>
-            
-
-
-            
-        </ul>
-
-    </div>
-    <footer class="site-footer">
-        <div class="container">
-            <small>
-                    <b>Last Updated:</b> Dec, 2023
-                </small>
-            <small class="block">
-                    © Victor Ojewale. Skillfully forked from <a href="https://stevenkolawole.github.io/" target="_blank"><span style="color: rgb(10, 93, 128)">Steven Kolawole's page</span></a>· &lt;/&gt; Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/heiswayi/thinkspace" target="_blank">Thinkspace</a>; hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-                </small>
+        <h1 class="header-name">Research</h1>
+        <div class="research-publication">
+            <p class="publication-title">Towards AI Accountability Infrastructure: Gaps and Opportunities in AI Audit Tooling · 2024</p>
+            <p class="conference-info">Forthcoming, 2024 CHI Conference on Human Factors in Computing Systems.</p>
+            <p class="authors"><strong class="bold">Victor Ojewale</strong>, Ryan Steed, Briana Vecchione, Abeba Birhane & Inioluwa Deborah Raji.</p>
         </div>
-    </footer>
+        <div class="research-publication">
+            <p class="publication-title"><a href="https://arxiv.org/pdf/2401.14462.pdf" class="publication-link" target="_blank">AI Auditing: The Broken Bus on the Road to AI Accountability · 2024</a></p>
+            <p class="conference-info">Forthcoming, 2nd IEEE Conference on Secure and Trustworthy Machine Learning (SaTML).</p>
+            <p class="authors">Abeba Birhane, Ryan Steed, <strong class="bold">Victor Ojewale</strong> , Briana Vecchione & Inioluwa Deborah Raji.</p>
+        </div>
+    
+    </div>
+    <div class="container">
+        <div>
+        <h1 class="header-name">Columns & Comments</h1>
+        <p class="column-title">Comment on NIST–2023–0309 · 2024</p>
+        <p class="column-info">Request for Information (RFI) Related to NIST’s Assignments Under Sections 4.1, 4.5 and 11 of the Executive Order Concerning Artificial Intelligence, FR Doc # 2023-28232.</p>
+        <p class="commentators">Inioluwa Deborah Raji, Abeba Birhane, Briana Vecchione, Ryan Steed & <strong class="bold">Victor Ojewale</strong>.</p>
+        <a href="https://downloads.regulations.gov/NIST-2023-0009-0171/attachment_1.pdf" class="column-link" target="_blank">PDF</a>
+    </div>
+    <div class="column-publication">
+        <p class="column-title">Comment on NTIA-2023-0005 · 2023</p>
+        <p class="column-info">NTIA AI Accountability Request for Comment, FR Doc # 2023-07776.</p>
+        <p class="commentators">Inioluwa Deborah Raji, Briana Vecchione, Abeba Birhane, Ryan Steed & <strong class="bold">Victor Ojewale</strong>.</p>
+        <a href="https://www.regulations.gov/comment/NTIA-2023-0005-1439" class="column-link" target="_blank">PDF</a>
+    </div>
+    </div>
 </body>
 
 </html>
