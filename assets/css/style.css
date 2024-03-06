@@ -280,3 +280,8 @@ a {
   transform: translateY(-2px); /* Lift effect on hover for interactivity */
   text-decoration: none; /* No underline on hover */
 }
+.column-publication, .research-publication {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
