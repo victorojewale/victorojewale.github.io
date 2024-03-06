@@ -261,3 +261,22 @@ a {
 .site-footer .block {
   display: block;
 }
+.toggle-button {
+  display: inline-block; /* Allows padding and width to work as expected */
+  background-color: #0056b3; /* Blue background to match your link color */
+  color: white; /* White text for contrast */
+  padding: 10px 20px; /* Ample padding for a button-like appearance */
+  margin: 20px 0; /* Space around the button */
+  border-radius: 5px; /* Rounded corners */
+  font-family: "Overpass Mono", monospace; /* Consistent font family */
+  font-size: 1.1em; /* Slightly larger font size for visibility */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Change cursor to indicate clickability */
+  transition: background-color 0.3s ease, transform 0.2s; /* Smooth background color change on hover and slight lift */
+}
+
+.toggle-button:hover, .toggle-button:focus {
+  background-color: #003d7a; /* Darker shade on hover for feedback */
+  transform: translateY(-2px); /* Lift effect on hover for interactivity */
+  text-decoration: none; /* No underline on hover */
+}
