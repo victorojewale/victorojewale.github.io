@@ -120,8 +120,8 @@
     <div class="container">
         <h1 class="header-name">Research</h1>
         <div class="research-publication">
-            <p class="publication-title"><a href="https://rbsteed.com/docs/accountability-infrastructure.pdf" class="publication-link" target="blank">Towards AI Accountability Infrastructure: Gaps and Opportunities in AI Audit Tooling · 2024</a> </p>
-            <p class="conference-info">Forthcoming, 2024 CHI Conference on Human Factors in Computing Systems.</p>
+            <p class="publication-title"><a href="https://arxiv.org/pdf/2402.17861.pdf" class="publication-link" target="blank">Towards AI Accountability Infrastructure: Gaps and Opportunities in AI Audit Tooling · 2024</a> </p>
+        
             <p class="authors"><strong class="bold">Victor Ojewale</strong>, Ryan Steed, Briana Vecchione, Abeba Birhane & Inioluwa Deborah Raji.</p>
         </div>
         <div class="research-publication">
@@ -131,7 +131,9 @@
         </div>
     
     </div>
-    <div class="container">
+    <button id="toggleCommentsAndColumns">Comments and Columns</button>
+
+    <div class="container" id="commentsAndColumnsContainer" style="display: none;">
         <div>
         <h1 class="header-name">Columns & Comments</h1>
         <p class="column-title">Comment on NIST–2023–0309 · 2024</p>
@@ -146,6 +148,16 @@
         <a href="https://www.regulations.gov/comment/NTIA-2023-0005-1439" class="column-link" target="_blank">PDF</a>
     </div>
     </div>
+    <script>
+        document.getElementById('toggleCommentsAndColumns').addEventListener('click', function() {
+            var content = document.getElementById('commentsAndColumnsContainer');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
