@@ -28,6 +28,9 @@
                 <div class="logo">
                     <a href="index.html">Victor Ojewale</a>
                 </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
                 <ul class="navbar">
                     <li><a href="index.html" class="active">About</a></li>
                     <li><a href="research.html">Publications</a></li>
@@ -99,6 +102,28 @@
             <h2>News & Updates</h2>
             <ul class="news-list">
                 <li class="news-item">
+                    <span class="news-date">April 2026</span>
+                    <a href="https://arxiv.org/pdf/2506.20793" target="_blank">Multi-lingual Functional Evaluation for Large Language Models</a> accepted to <strong>ACL Findings</strong>. See you in San Diego!
+                </li>
+                <li class="news-item">
+                    <span class="news-date">April 2026</span>
+                    More Is Not Better: Visual Uncertainty Cues and the Fragility of Trust Calibration in LLM-Assisted
+                    Decision Making accepted to <strong>Computers in Human Behavior: Artificial Humans</strong>.
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Dec 2025</span>
+                    <a href="https://openreview.net/pdf?id=m2lfm9uTai" target="_blank">Beyond Static Leaderboards: A
+                        Roadmap to Naturalistic, Functional Evaluation of LLMs</a> accepted to the Second Workshop on
+                    Language Models for Underserved Communities (LM4UC) at AAAI 2026.
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Sep 2025</span>
+                    <a href="https://cntr.brown.edu/news/2025-09-15/responsible-llm-testing" target="_blank">"Testing
+                        LLMs in a sandbox isn't responsible. Focusing on community uses and needs is."</a> (with
+                    Michelle L. Ding, Jo Kavishe, Suresh Venkatasubramanian) accpeted as an opinion abstract at the
+                    Workshop on Socially Responsible Language Modelling Research at COLM 2025.
+                </li>
+                <li class="news-item">
                     <span class="news-date">July 2025</span>
                     Excited to be one of the keynote speakers at the inaugural Technical AI Governance Workshop at ICML.
                 </li>
@@ -168,10 +193,20 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Victor Ojewale.</p>
+            <p>&copy; <span id="copyright-year"></span> Victor Ojewale.</p>
             <p><small>Built with Jekyll & GitHub Pages.</small></p>
         </div>
     </footer>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        const navbar = document.querySelector('.navbar');
+        toggle.addEventListener('click', () => {
+            const open = navbar.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', open);
+        });
+    </script>
 </body>
 
 </html>

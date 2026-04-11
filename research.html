@@ -24,6 +24,9 @@
                 <div class="logo">
                     <a href="index.html">Victor Ojewale</a>
                 </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
                 <ul class="navbar">
                     <li><a href="index.html">About</a></li>
                     <li><a href="research.html" class="active">Publications</a></li>
@@ -180,9 +183,19 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Victor Ojewale.</p>
+            <p>&copy; <span id="copyright-year"></span> Victor Ojewale.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        const navbar = document.querySelector('.navbar');
+        toggle.addEventListener('click', () => {
+            const open = navbar.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', open);
+        });
+    </script>
 </body>
 
 </html>
