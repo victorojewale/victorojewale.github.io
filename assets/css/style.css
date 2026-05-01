@@ -459,6 +459,8 @@ img {
 
 .site-footer p {
   margin-bottom: 0.5rem;
+  max-width: none;
+  text-align: center;
 }
 
 .site-footer a {
