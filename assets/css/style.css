@@ -12,10 +12,8 @@
   /* Dark Gray for primary text */
   --color-text-light: #718096;
   /* Lighter Gray for secondary text */
-  --color-bg-body: #f7fafc;
-  /* Very light gray/white for background */
+  --color-bg-body: #ffffff;
   --color-bg-card: #ffffff;
-  /* Pure white for cards */
   --color-border: #e2e8f0;
   /* Light border color */
   --color-accent: #319795;
@@ -158,11 +156,10 @@ img {
 /* Header & Navigation */
 .site-header {
   background-color: var(--color-bg-card);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-primary);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
 }
 
 .nav {
@@ -225,14 +222,18 @@ img {
   }
 }
 
-.hero-image img {
-  border-radius: 50%;
-  /* Circle */
-  border: 4px solid white;
-  box-shadow: var(--shadow-md);
+.hero-image {
   width: 280px;
   height: 280px;
-  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  transform: translateY(-80px);
 }
 
 .hero-title {
@@ -263,23 +264,14 @@ img {
 
 .social a:hover {
   color: var(--color-primary);
-  transform: translateY(-2px);
 }
 
 
 /* Cards / Content Blocks */
 .card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
   padding: var(--space-lg);
   margin-bottom: var(--space-md);
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  border-top: 1px solid var(--color-border);
 }
 
 
@@ -288,16 +280,8 @@ img {
   list-style: none;
   margin: 0;
   max-height: 450px;
-  /* Fixed height for scrolling */
   overflow-y: auto;
-  /* Enable vertical scrolling */
-  padding-right: var(--space-sm);
-  /* Space for scrollbar */
-  border: 1px solid var(--color-border);
-  /* Optional: visual boundary */
-  border-radius: 6px;
-  padding: var(--space-md);
-  background-color: var(--color-bg-card);
+  padding: var(--space-sm) 0;
 }
 
 /* Custom scrollbar for news list */
