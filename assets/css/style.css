@@ -451,6 +451,15 @@ img {
   color: var(--color-text-main);
 }
 
+.site-footer .site-attribution {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.site-footer .site-attribution a {
+  color: inherit;
+}
+
 /* Utility Animations */
 @keyframes fadeIn {
   from {
