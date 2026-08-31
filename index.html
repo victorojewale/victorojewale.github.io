@@ -51,11 +51,8 @@
                 <p>
                     I work on <strong>algorithmic accountability</strong>, <strong>AI auditing</strong>, and
                     <strong>evaluation infrastructure for large language models and autonomous agentic systems</strong>.
-                    My goal
-                    is to build
-                    rigorous, context-aware evaluation methods that make model behavior measurable, comparable, and
-                    auditable in real-world use.
-
+                    My goal is to build rigorous, context-aware evaluation methods that make model behavior measurable,
+                    comparable, and auditable in real-world use.
                 </p>
                 <p>
                     Affiliated with the <a href="https://cntr.brown.edu/" target="_blank">Center for Tech Responsibility
@@ -71,6 +68,8 @@
                         Project</a>. I obtained my undergraduate degree in Computer Science from the <strong>University
                         of Ibadan</strong>.
                 </p>
+                <p>Beyond research, I make <a href="https://www.youtube.com/@victorojewale" target="_blank"
+                        rel="noopener noreferrer">videos on YouTube</a>.</p>
 
                 <div class="social hero-social">
                     <a href="mailto:victor_ojewale@brown.edu" aria-label="Email">
@@ -97,12 +96,12 @@
             </div>
         </section>
 
-        <hr style="border: 0; border-top: 1px solid var(--color-border); margin: var(--space-xl) 0;">
+        <hr class="section-divider">
 
         <!-- News Section -->
         <section class="section">
             <h2>News & Updates</h2>
-            <ul class="news-list">
+            <ul class="news-list" id="news-list">
                 <li class="news-item">
                     <span class="news-date">August 2026</span>
                     Our <a href="https://www.ai-observatory.org/" target="_blank" rel="noopener noreferrer">Public
@@ -199,36 +198,62 @@
                     I officially accepted Brown's PhD offer to start in the fall.
                 </li>
             </ul>
-        </section>
-
-        <!-- Personal / Fun Section -->
-        <section class="section card">
-            <p style="margin-bottom: 0;">
-                <strong>Outside of work:</strong> I enjoy vlogging 🎥 (<a href="https://www.youtube.com/@victorojewale"
-                    target="_blank">subscribe to my YT channel!</a>), playing video games 🎮, watching anime 🎞️, and
-                dabbling in music 🎵.
-            </p>
+            <div class="news-controls" id="news-controls" hidden>
+                <button class="news-toggle" id="show-more-news" type="button" aria-controls="news-list">Show more
+                    updates</button>
+                <button class="news-toggle" id="show-less-news" type="button" aria-controls="news-list" hidden>Show
+                    less</button>
+            </div>
         </section>
 
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; <span id="copyright-year"></span> Victor Ojewale.</p>
-            <p class="site-attribution">Forked from <a href="https://stevenkolawole.github.io/" target="_blank" rel="noopener noreferrer">Steven
-                        Kolawole's page</a>.</p>
-            <p><small>Built with Jekyll & GitHub Pages.</small></p>
+            <p class="site-footer-meta">Website forked from <a href="https://stevenkolawole.github.io/"
+                    target="_blank" rel="noopener noreferrer">Steven Kolawole's page</a> (Updated August 2026)
+                and built with Jekyll &amp; GitHub Pages.</p>
         </div>
     </footer>
     <script>
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-
         const toggle = document.querySelector('.mobile-menu-toggle');
         const navbar = document.querySelector('.navbar');
         toggle.addEventListener('click', () => {
             const open = navbar.classList.toggle('is-open');
             toggle.setAttribute('aria-expanded', open);
         });
+
+        const newsItems = Array.from(document.querySelectorAll('#news-list .news-item'));
+        const newsControls = document.getElementById('news-controls');
+        const showMoreNews = document.getElementById('show-more-news');
+        const showLessNews = document.getElementById('show-less-news');
+        const newsPageSize = 5;
+        let visibleNewsCount = newsPageSize;
+
+        function updateNewsVisibility() {
+            newsItems.forEach((item, index) => {
+                item.hidden = index >= visibleNewsCount;
+            });
+            showMoreNews.hidden = visibleNewsCount >= newsItems.length;
+            showLessNews.hidden = visibleNewsCount <= newsPageSize;
+        }
+
+        if (newsItems.length > newsPageSize) {
+            newsControls.hidden = false;
+            showMoreNews.addEventListener('click', () => {
+                visibleNewsCount = Math.min(visibleNewsCount + newsPageSize, newsItems.length);
+                updateNewsVisibility();
+            });
+            showLessNews.addEventListener('click', () => {
+                visibleNewsCount = newsPageSize;
+                updateNewsVisibility();
+                document.getElementById('news-list').scrollIntoView({
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+                    block: 'start'
+                });
+            });
+            updateNewsVisibility();
+        }
     </script>
 </body>
 
