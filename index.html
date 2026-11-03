@@ -104,6 +104,12 @@
             <h2>News & Updates</h2>
             <ul class="news-list" id="news-list">
                 <li class="news-item">
+                    <span class="news-date">November 2026</span>
+                    <a href="https://abstentionact.github.io/" target="_blank" rel="noopener noreferrer">AbstentionAct</a>
+                    is now live! Explore our benchmark for evaluating when autonomous agents should act, ask for
+                    clarification, or abstain.
+                </li>
+                <li class="news-item">
                     <span class="news-date">October 2026</span>
                     Excited to join the inaugural cohort of the <a href="https://openmined.org/research/fellowship/"
                         target="_blank" rel="noopener noreferrer">OpenMined Research Fellowship</a>!
@@ -239,25 +245,26 @@
         const newsControls = document.getElementById('news-controls');
         const showMoreNews = document.getElementById('show-more-news');
         const showLessNews = document.getElementById('show-less-news');
+        const initialNewsCount = 6;
         const newsPageSize = 5;
-        let visibleNewsCount = newsPageSize;
+        let visibleNewsCount = initialNewsCount;
 
         function updateNewsVisibility() {
             newsItems.forEach((item, index) => {
                 item.hidden = index >= visibleNewsCount;
             });
             showMoreNews.hidden = visibleNewsCount >= newsItems.length;
-            showLessNews.hidden = visibleNewsCount <= newsPageSize;
+            showLessNews.hidden = visibleNewsCount <= initialNewsCount;
         }
 
-        if (newsItems.length > newsPageSize) {
+        if (newsItems.length > initialNewsCount) {
             newsControls.hidden = false;
             showMoreNews.addEventListener('click', () => {
                 visibleNewsCount = Math.min(visibleNewsCount + newsPageSize, newsItems.length);
                 updateNewsVisibility();
             });
             showLessNews.addEventListener('click', () => {
-                visibleNewsCount = newsPageSize;
+                visibleNewsCount = initialNewsCount;
                 updateNewsVisibility();
                 document.getElementById('news-list').scrollIntoView({
                     behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
